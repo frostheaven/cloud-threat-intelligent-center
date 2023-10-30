@@ -116,15 +116,24 @@ const handleSelect = (key: string, keyPath: string[]) => {
     height: 100%;
     .el-header {
         position: relative;
-        background-color: rgb(225, 225, 225);
-        color: var(--el-text-color-primary);
-    }
-    .el-aside {
-        color: var(--el-text-color-primary);
-        background: var(--el-menu-bg-color);
+        background-color: $common-bgc-dark;
     }
     .el-menu {
         border-right: none;
+        .el-menu-item, :deep(.el-sub-menu__title) {
+            color: $font-color-light;
+            &:hover {
+                background-color: lighten($common-bgc-dark, 10);
+                color: lighten($font-color-light, 10);
+            }
+        }
+        :deep(.is-active) {
+            color: $font-hover-color!important;;
+        }
+        &, & > * {
+            background: $common-bgc-dark;
+        }
+        
     }
     .el-main {
         padding: 0;

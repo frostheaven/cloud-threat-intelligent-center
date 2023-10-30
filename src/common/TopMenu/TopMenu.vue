@@ -38,15 +38,37 @@
 </script>
 
 <style scoped lang="scss">
-.el-menu-item{
-    font-size: 1rem;
+.el-menu {
+    background-color: $common-bgc-primary;
+    color: $font-color-light;
+    :deep(.is-active) {
+        color: $font-color-light!important;
+        background-color: lighten($common-bgc-primary, 5);
+        &:hover {
+            color: $font-hover-color !important;
+        }
+        &:focus {
+            color: $font-hover-color !important;
+            background-color: lighten($common-bgc-primary, 10);
+        }
+    }
+    .el-menu-item{
+        font-size: 1rem;
+    }
+    .el-menu-item, .el-sub-menu {
+        width: 12%;
+        color: $font-color-light;
+        &:hover {
+            color:$font-hover-color;
+            background-color: lighten($common-bgc-primary, 5);
+        }
+    }
 }
+
 .flex-grow {
     flex-grow: 1;
 }
-.el-menu-item, .el-sub-menu {
-    width: 12%;
-}
+
 .user-avatar {
   display: flex;
   text-align: center;

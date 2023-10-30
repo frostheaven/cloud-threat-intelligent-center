@@ -1,6 +1,6 @@
 <template>
    <div class="search-bar">
-      <el-input placeholder="输入关键字进行标题和内容搜索">
+      <el-input v-model="searchInput" placeholder="输入关键字进行标题和内容搜索">
          <template #append>
             <el-button :icon="Search">Search</el-button>
          </template>
@@ -25,8 +25,10 @@
 </template>
 
 <script setup lang="ts">
+   import { ref } from 'vue';
    import { Search } from '@element-plus/icons-vue'
    import { ElInput, ElButton, ElCard } from 'element-plus'
+   const searchInput = ref('')
 
 </script>
 
@@ -36,13 +38,13 @@
       display: flex;
       justify-content: center;
       padding: 1rem 0;
-      background-color: darken($commonbgc, 10);
+      background-color: darken($common-bgc-dark, 10);
       .el-input {
          width: 80%;
          height: 2.5rem;
          .el-button:hover {
             background-color: $font-hover-color ;
-            color: $font-color;
+            color: $font-color-light;
             transition-duration: 0.3s;
          }
       }

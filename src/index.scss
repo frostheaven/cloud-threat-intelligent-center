@@ -1,9 +1,13 @@
-$commonbgc: #f2f2f2;
-$pagewidth: 1200px;
+$common-bgc-dark: #1d2025;
+$common-bgc-light: #fff;
+$common-bgc-primary: #1890ff;
+$page-width: 1200px;
 $color: #66718C;
-$font-hover-color: #549df7;
-$font-color: #fff;
+$font-hover-color: aqua; //#549df7
+$font-color-light: #f8f6f6;
+$font-color-dark: grey;
 $font-size-small: 12px;
+$shadow-color: black;
 
 //顶部菜单栏
 $top-menu-height: var(--el-menu-horizontal-height);

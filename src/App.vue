@@ -7,7 +7,7 @@
 </script>
 <style scoped lang="scss">
 .container {
-  // width: $pagewidth;
+  // width: $page-width;
   // margin: 0 calc(50% - 600px);
   margin: 0;
 

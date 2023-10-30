@@ -19,10 +19,10 @@ export const createrouter = [
     children: [
       {
         path: '/home/report',
-        component: () => import('@views/result/result.vue'),
+        component: () => import('@views/ThreatReport/ThreatReport.vue'),
         name: 'report',
         meta: {
-          title: '威胁报告',
+          title: '报告检索',
           icon: 'Position',
           hidden: true
         }
