@@ -117,11 +117,26 @@ const tableForm = ref([tableForm_attackOrg, tableForm_virus, tableForm_date, tab
         .single-form {
             width: 20%;
             border: 1px solid darken($font-color-light, 20);
+            .el-table {
+                background-color: $common-bgc-dark;
+                color: $font-color-light;
+                &:deep(.el-table__row) {
+                    &:hover {
+                        color: $font-color-dark;
+                        cursor: pointer;
+                    }
+                }
+                &:deep(th.el-table__cell) {
+                    background-color: $common-bgc-dark;
+                }
+            }
         }
     }
 }
 .report-container {
     display: flex;
+    color: $font-color-light;
+    cursor: default;
     .deep-report-container {
         width: 70%;
         padding: 0.5rem;
