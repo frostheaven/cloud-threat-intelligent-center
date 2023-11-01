@@ -20,7 +20,7 @@
                             <el-sub-menu index="threat-knowledge-base">
                                 <template #title>
                                     <el-icon>
-                                        <MessageBox />
+                                        <collection />
                                     </el-icon>威胁知识库
                                 </template>
                                 <el-menu-item-group>
@@ -43,7 +43,7 @@
                             <el-menu-item index="intelligence-sandbox">
                                 <template #title>
                                     <el-icon>
-                                        <data-line />
+                                        <message-box />
                                     </el-icon>情报沙箱
                                 </template>
                             </el-menu-item>
@@ -51,7 +51,7 @@
                             <el-menu-item index="6">
                                 <template #title>
                                     <el-icon>
-                                        <star />
+                                        <office-building />
                                     </el-icon>情报公司
                                 </template>
                             </el-menu-item>
@@ -80,7 +80,7 @@
 import TopMenu from '@common/TopMenu/TopMenu.vue'
 
 import { ref, getCurrentInstance } from 'vue'
-import { Document, MessageBox, Monitor, EditPen, DataLine, Star, CaretRight } from '@element-plus/icons-vue'
+import { Document, MessageBox, Collection, EditPen, OfficeBuilding, Star, CaretRight } from '@element-plus/icons-vue'
 import { ElContainer, ElAside, ElSubMenu, ElScrollbar, ElMenuItem, ElIcon, ElMenuItemGroup, ElMenu, ElHeader, ElMain, ElTable, ElTableColumn } from 'element-plus'
 
 const activeIndex: string = "1"

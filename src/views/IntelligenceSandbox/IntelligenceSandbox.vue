@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang='ts' setup>
-import Loader from '@common/IntelligenceSandbox_loader/index.vue'
+import Loader from './IntelligenceSandbox_loader/index.vue'
 </script>
 <style scoped lang="scss">
 .IntelligenceSandbox {

@@ -18,7 +18,7 @@
   </div>
 </template>
 <script lang='ts' setup>
-import SecurityNews from '@common/SecurityNews/index.vue'
+import SecurityNews from './SecurityNews/index.vue'
 
 
 

@@ -22,6 +22,30 @@ export default defineConfig({
       "@views": path.resolve(__dirname, "src/views"),
       "@common": path.resolve(__dirname, "src/common"),
     }
-  }
+  },
+  //配置服务代理
+  server: {
+    port: 8001,
+
+    proxy: {
+      '/local': {
+        target: 'http://127.0.0.1:3000',
+        ws: false, // 是否跨域
+        changeOrigin: true,
+        // rewrite: (path) => {
+        //   return path.replace('/local', '/');
+        // },
+      },
+      '/api': {
+        target: 'http://10.40.127.46:30000',
+        ws: false, // 是否跨域
+        changeOrigin: true,
+        // rewrite: (path) => {
+        //   return path.replace('/portalApi', '/');
+        // },
+      },
+
+    },
+  },
 
 })
