@@ -1,5 +1,5 @@
 <template>
-    <div>
+    
         <div class="top-menu">
             <top-menu />
         </div>
@@ -73,7 +73,7 @@
                 </el-container>
             </el-container>
         </div>
-    </div>
+
 </template>
 
 <script lang="ts" setup>
