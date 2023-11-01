@@ -19,32 +19,31 @@
 
                         <el-sub-menu index="2">
                             <template #title>
-                                <el-icon><MessageBox /></el-icon>威胁知识库
+                                <el-icon><Collection /></el-icon>威胁知识库
                             </template>
                             <el-menu-item-group>
                                 <el-menu-item index="virus-family-lib"><el-icon><CaretRight /></el-icon>病毒家族库</el-menu-item>
                                 <el-menu-item index="apt-organize-lib"><el-icon><CaretRight /></el-icon>APT组织库</el-menu-item>
-                                <el-menu-item index="row-intelligence"><el-icon><CaretRight /></el-icon>原始情报</el-menu-item>
                             </el-menu-item-group>
                         </el-sub-menu>
 
                         <el-menu-item index="3">
                             <template #title>
                                 <el-icon>
-                                    <monitor />
-                                </el-icon>威胁可视化
+                                    <edit-pen />
+                                </el-icon>安全资讯
                             </template>
                         </el-menu-item>
                         
                         <el-menu-item index="4">
                             <template #title>
                                 <el-icon>
-                                    <edit-pen />
-                                </el-icon>威胁研判
+                                    <message-box />
+                                </el-icon>情报沙箱
                             </template>
                         </el-menu-item>
 
-                        <el-menu-item index="5">
+                        <!-- <el-menu-item index="5">
                             <template #title>
                                 <el-icon>
                                     <data-line />
@@ -58,7 +57,7 @@
                                     <star />
                                 </el-icon>情报订阅
                             </template>
-                        </el-menu-item>
+                        </el-menu-item> -->
 
                     </el-menu>
                 </el-scrollbar>
@@ -84,7 +83,7 @@
 import TopMenu from '@common/TopMenu/TopMenu.vue'
 
 import { ref, getCurrentInstance } from 'vue'
-import { Document, MessageBox, Monitor, EditPen, DataLine, Star, CaretRight } from '@element-plus/icons-vue'
+import { Document, Collection, MessageBox, EditPen, DataLine, Star, CaretRight } from '@element-plus/icons-vue'
 import { ElContainer, ElAside, ElSubMenu, ElScrollbar, ElMenuItem, ElIcon, ElMenuItemGroup, ElMenu, ElHeader, ElMain, ElTable, ElTableColumn } from 'element-plus'
 
 const activeIndex: string = "1"

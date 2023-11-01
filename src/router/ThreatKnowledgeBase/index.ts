@@ -1,6 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
 import APTOrganizeLib from '@views/ThreatKnowledgeBase/APTOrganizeLib/APTOrganizeLib.vue'
-import RawIntelligence from '@views/ThreatKnowledgeBase/RawIntelligence/RawIntelligence.vue'
 import VirusFamilyLib from '@views/ThreatKnowledgeBase/VirusFamilyLib/VirusFamilyLib.vue'
 
 
@@ -11,15 +10,6 @@ const route: RouteRecordRaw[] = [
         component: APTOrganizeLib,
         meta: {
             title: 'APT组织库',
-            hidden: true
-        }
-    },
-    {
-        path: '/home/threat-knowledge-base/row-intelligence',
-        name: 'row-intelligence',
-        component: RawIntelligence,
-        meta: {
-            title: '原始情报',
             hidden: true
         }
     },
