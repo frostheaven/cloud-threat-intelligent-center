@@ -7,7 +7,7 @@
         <el-container class="layout-container">
             <el-aside width="200px" style="background-color: #1d2025;">
                 <el-scrollbar>
-                    <el-menu :default-openeds="['2']" :default-active="activeIndex" @select="handleSelect">
+                    <el-menu :default-openeds="['threat-knowledge-base']" :default-active="activeIndex" @select="handleSelect">
                         <el-menu-item index="report">
                             <template #title>
                                 <el-icon>
