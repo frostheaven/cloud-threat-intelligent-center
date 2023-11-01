@@ -1,5 +1,4 @@
 import ThreatKnowledgeBase from '@router/ThreatKnowledgeBase/index.ts'
-
 export const createrouter = [
   {
     path: '/',
@@ -31,7 +30,25 @@ export const createrouter = [
         path: '/home/threat-knowledge-base',
         name: 'threat-knowledge-base',
         children: [...ThreatKnowledgeBase]
-      }
+      },
+      {
+        path: '/home/security-information',
+        name: 'security-information',
+        component: () => import('@views/SecurityInformation/SecurityInformation.vue'),
+        meta: {
+          title: '安全资讯',
+          hidden: true
+        }
+      },
+      {
+        path: '/home/intelligence-sandbox',
+        name: 'intelligence-sandbox',
+        component: () => import('@views/IntelligenceSandbox/IntelligenceSandbox.vue'),
+        meta: {
+          title: '情报沙箱',
+          hidden: true
+        }
+      },
     ]
   },
   {

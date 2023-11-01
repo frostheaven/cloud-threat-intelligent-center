@@ -15,15 +15,6 @@ const route: RouteRecordRaw[] = [
         }
     },
     {
-        path: '/home/threat-knowledge-base/row-intelligence',
-        name: 'row-intelligence',
-        component: RawIntelligence,
-        meta: {
-            title: '原始情报',
-            hidden: true
-        }
-    },
-    {
         path: '/home/threat-knowledge-base/virus-family-lib',
         name: 'virus-family-lib',
         component: VirusFamilyLib,

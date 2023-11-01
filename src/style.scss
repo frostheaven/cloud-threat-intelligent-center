@@ -4,6 +4,18 @@
 }
 
 body {
-  background-color: $common-bgc-dark;
+  background-color: $common-bgc-grey;
   color: $color;
+  height: 100vh;
+  width: 100vw;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+a {
+  text-decoration: none;
 }
