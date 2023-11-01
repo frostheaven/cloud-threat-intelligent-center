@@ -1,6 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
 import APTOrganizeLib from '@views/ThreatKnowledgeBase/APTOrganizeLib/APTOrganizeLib.vue'
-import RawIntelligence from '@views/ThreatKnowledgeBase/RawIntelligence/RawIntelligence.vue'
 import VirusFamilyLib from '@views/ThreatKnowledgeBase/VirusFamilyLib/VirusFamilyLib.vue'
 
 
