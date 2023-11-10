@@ -37,7 +37,7 @@ export default defineConfig({
         // },
       },
       '/api': {
-        target: 'http://10.40.127.46:30000',
+        target: 'http://172.20.10.3:8080',
         ws: false, // 是否跨域
         changeOrigin: true,
         // rewrite: (path) => {

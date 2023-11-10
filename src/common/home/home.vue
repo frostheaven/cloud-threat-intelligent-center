@@ -1,5 +1,4 @@
 <template>
-    
     <div class="top-menu">
         <top-menu />
     </div>
@@ -30,7 +29,11 @@
                                 <el-menu-item index="apt-organize-lib"><el-icon>
                                         <CaretRight />
                                     </el-icon>APT组织库</el-menu-item>
+                                <el-menu-item index="threat-overview"><el-icon>
+                                        <CaretRight />
+                                    </el-icon>漏洞总览</el-menu-item>
                             </el-menu-item-group>
+
                         </el-sub-menu>
                         <el-menu-item index="security-information">
                             <template #title>
@@ -73,90 +76,95 @@
             </el-container>
         </el-container>
     </div>
-
 </template>
 
 <script lang="ts" setup>
 import TopMenu from '@common/TopMenu/TopMenu.vue'
-
-import { ref, getCurrentInstance } from 'vue'
+import { ref, getCurrentInstance, onMounted } from 'vue'
 import { Document, MessageBox, Collection, EditPen, OfficeBuilding, Star, CaretRight } from '@element-plus/icons-vue'
 import { ElContainer, ElAside, ElSubMenu, ElScrollbar, ElMenuItem, ElIcon, ElMenuItemGroup, ElMenu, ElHeader, ElMain, ElTable, ElTableColumn } from 'element-plus'
+import threatData from '@/store/modules/threatData'
 
+let $threatData = threatData()
+
+
+onMounted(() => {
+    console.log($threatData.getData());
+})
 const activeIndex: string = "1"
 const { proxy }: any = getCurrentInstance()
 const handleSelect = (key: string, keyPath: string[]) => {
-console.log('key:', key, '|| keyPath:', keyPath)
-const router: any = proxy.$router
-router.push({
-    name: key
-})
+    console.log('key:', key, '|| keyPath:', keyPath)
+    const router: any = proxy.$router
+    router.push({
+        name: key
+    })
 }
 
 </script>
 
 <style scoped lang="scss">
 .top-menu {
-height: $top-menu-height;
-width: 100%;
+    height: $top-menu-height;
+    width: 100%;
 }
 
 .central-display {
-height: calc(100vh - $top-menu-height);
-position: fixed;
-width: 100%;
+    height: calc(100vh - $top-menu-height);
+    position: fixed;
+    width: 100%;
 }
 
 .layout-container {
-height: 100%;
-
-.el-header {
-    position: relative;
-    background-color: $common-bgc-dark;
-}
-
-.el-menu {
-    border-right: none;
-
-    .el-menu-item,
-    :deep(.el-sub-menu__title) {
-        color: $font-color-light;
-
-        &:hover {
-            background-color: lighten($common-bgc-dark, 10);
-            color: lighten($font-color-light, 10);
-        }
-    }
-
-    :deep(.is-active) {
-        color: $font-hover-color !important;
-        ;
-    }
-
-    &,
-    &>* {
-        background: $common-bgc-dark;
-    }
-
-}
-
-.el-main {
-    padding: 0;
-    width: 100%;
-    padding: 1rem;
-    // & > * {
-    //     border-radius: 5%;
-    // }
-}
-
-.toolbar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    right: 20px;
-    font-size: 1rem;
-    color: $font-hover-color;
-}
+
+    .el-header {
+        position: relative;
+        background-color: $common-bgc-dark;
+    }
+
+    .el-menu {
+        border-right: none;
+
+        .el-menu-item,
+        :deep(.el-sub-menu__title) {
+            color: $font-color-light;
+
+            &:hover {
+                background-color: lighten($common-bgc-dark, 10);
+                color: lighten($font-color-light, 10);
+            }
+        }
+
+        :deep(.is-active) {
+            color: $font-hover-color !important;
+            ;
+        }
+
+        &,
+        &>* {
+            background: $common-bgc-dark;
+        }
+
+    }
+
+    .el-main {
+        padding: 0;
+        width: 100%;
+        padding: 1rem;
+        // & > * {
+        //     border-radius: 5%;
+        // }
+    }
+
+    .toolbar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        right: 20px;
+        font-size: 1rem;
+        color: $font-hover-color;
+    }
 }
 </style>
