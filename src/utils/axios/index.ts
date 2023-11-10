@@ -65,6 +65,36 @@ request.interceptors.response.use((response) => {
   return response.data
 }, errorHandler)
 
+export const APIrequest = axios.create({
+  baseURL: 'http://172.20.10.3:8080',
+  timeout: 8000
+})
+
+//请求拦截器
+APIrequest.interceptors.request.use((config) => {
+
+  // 如果 token 存在
+  // 让每个请求携带自定义 token 请根据实际情况自行修改
+  // if (token) {
+  //   config.headers['Access-Token'] = token
+  //   config.headers.Authorization = `Bearer ${token}`
+  // }
+  return config;
+}, errorHandler);
+
+
+//响应拦截器
+APIrequest.interceptors.response.use((response) => {
+  // console.log('接口请求路径------', response.config.url)
+  // console.log('接口返回数据------', response.data)
+
+  // if (response.data.code == 401) {
+  //   router.push('/login')
+  // }
+  return response.data
+}, errorHandler)
+
+
 
 
 
