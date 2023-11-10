@@ -54,6 +54,14 @@
     }
     .el-menu-item{
         font-size: 1rem;
+        height: $top-menu-height;
+        display: flex;
+        align-items: center;
+        & div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
     }
     .el-menu-item, .el-sub-menu {
         width: 12%;
