@@ -8,7 +8,7 @@
    </div>
    <div class="form-container">
       <el-table :data="tableData" style="width: 100%">
-         <el-table-column prop="id" label="AVD编号" />
+         <el-table-column prop="id" label="APT编号" />
          <el-table-column prop="name" label="漏洞名称" />
          <el-table-column prop="type" label="漏洞类型" />
          <el-table-column prop="time" label="披露时间" />
