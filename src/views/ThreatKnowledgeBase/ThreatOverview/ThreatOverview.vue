@@ -1,25 +1,41 @@
 <template>
    <div class="search-bar">
-      <el-input v-model="searchInput" placeholder="输入关键字进行标题和内容搜索">
+      <el-input v-model="searchInput" placeholder="请输入漏洞的AVD编号或名称以检索到该漏洞">
          <template #append>
             <el-button :icon="Search">Search</el-button>
          </template>
       </el-input>
    </div>
-   <div class="card-group">
-      <div v-for="item in threatData"></div>
+   <div class="form-container">
+      <el-table :data="tableData" style="width: 100%">
+         <el-table-column prop="id" label="AVD编号" />
+         <el-table-column prop="name" label="漏洞名称" />
+         <el-table-column prop="type" label="漏洞类型" />
+         <el-table-column prop="time" label="披露时间" />
+      </el-table>
+
    </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, ref, onMounted } from 'vue';
 import { Search } from '@element-plus/icons-vue'
-import { ElInput, ElButton, ElCard } from 'element-plus'
+import { ElInput, ElButton, ElTable, ElTableColumn } from 'element-plus'
 const searchInput = ref('')
 const threatData = reactive({})
 
-onMounted(() => {
+const tableData = [
+   {
+      id: 'hhh',
+      name: '漏洞',
+      type: '类型',
+      time: '2023/11/22'
+   },
+   
+]
 
+onMounted(() => {
+   
 })
 
 
@@ -47,36 +63,30 @@ onMounted(() => {
    }
 }
 
-.card-group {
-   padding: 2rem;
+.form-container {
+   box-sizing: border-box;
+   padding: 0.5rem 1rem;
    display: flex;
-   justify-content: flex-start;
-   flex-wrap: wrap;
-
-   .el-card {
-      width: 25%;
-      padding: 2rem;
-      margin: 0.5rem;
-      border-radius: 3%;
-
-      .image {
-         width: 100%;
-         display: block;
+   justify-content: center;
+   .el-table {
+      background-color: $common-bgc-dark;
+      color: $font-color-light;
+      &:deep(.el-table__row) {
+         height: 4rem;
+         &:hover {
+            color: $font-color-dark;
+            cursor: pointer;
+         }
       }
 
-      .bottom {
-         margin-top: 13px;
-         // line-height: 12px;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-      }
-
-      .button {
-         padding: 0;
-         min-height: auto;
+      &:deep(th.el-table__cell) {
+         background-color: $common-bgc-dark;
       }
    }
 
+}
+
+.el-table {
+   --el-table-tr-bg-color: $common-bgc-dark;
 }
 </style>
